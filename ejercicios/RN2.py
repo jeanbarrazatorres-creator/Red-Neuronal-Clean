@@ -117,6 +117,7 @@ def evaluar():
 
         if prob >= 0.8:
             print("Puede acceder al sistema")
+            exit()
             
         else:
             print("No puede acceder")
