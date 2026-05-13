@@ -1,27 +1,39 @@
-print("Bien venido a su cuenta")
+print("Bienvenido a su cuenta")
 
 saldo = 2000 
-print("Su saldo es de :", saldo)
 
-print("Que quire hacer: ")
-print("1 depositar")
-print("2 retirar")
-print("3 salir")
+while True:
+    print("\nSu saldo es:", saldo)
 
-Elegir = input("Eliga su decion: ")
+    print("\n¿Qué quiere hacer?")
+    print("1. Depositar")
+    print("2. Retirar")
+    print("3. Salir")
 
-if Elegir == "1":
-    Nombre_de_la_cuenta = input("Escriba el nombre de la cuenta: ")
-    Monto = int(input("Escriba el monto: "))
-    saldo_actu = saldo - Monto
-    print("Se depositaron:", Monto, "a esta cuenta:", Nombre_de_la_cuenta)
-    print("Tu saldo actual es:", saldo_actu)
-elif Elegir == "2": 
-    Retirar = int(input("Cuanto quieres retirar: "))
-    saldo_actu2 = saldo - Retirar
-    print("Retiraste:", Retirar)
-    print("saldo actual es:", saldo_actu2)
-elif Elegir == "3":
-    print("Adios")
-else: 
-    print("Ese opcion no es valida")
+    elegir = input("Elija su opción: ")
+
+    if elegir == "1":
+        nombre_cuenta = input("Escriba el nombre de la cuenta: ")
+        monto = int(input("Escriba el monto a depositar: "))
+
+        saldo = saldo + monto  
+
+        print("Se depositaron:", monto, "a la cuenta:", nombre_cuenta)
+        print("Tu saldo actual es:", saldo)
+
+    elif elegir == "2":
+        retirar = int(input("¿Cuánto quieres retirar?: "))
+
+        if retirar > saldo:
+            print(" No tienes suficiente saldo")
+        else:
+            saldo = saldo - retirar
+            print("Retiraste:", retirar)
+            print("Saldo actual:", saldo)
+
+    elif elegir == "3":
+        print("Adiós 👋")
+        break
+
+    else:
+        print(" Esa opción no es válida")
