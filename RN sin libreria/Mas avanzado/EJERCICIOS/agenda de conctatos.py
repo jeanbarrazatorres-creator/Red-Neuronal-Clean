@@ -40,8 +40,8 @@ while True:
 
             if nombre not in contactos:
                 contactos[nombre] = {
-                    "correo": correo,
-                    "numero": numero
+                   "telefono": numero,
+                    "correo": correo
                 }
             else:
                 print("Ese numero ya esta en tu conctatos")
